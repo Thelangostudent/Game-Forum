@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameForumProject">
         <activity
+            android:name=".BulletPoint"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -23,8 +26,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
             </intent-filter>
         </activity>
     </application>

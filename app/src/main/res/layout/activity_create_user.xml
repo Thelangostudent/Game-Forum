@@ -14,19 +14,25 @@
         android:layout_marginStart="38dp"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="515dp"
-        android:text="TextView"
+        android:text="@string/prompt_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/createPassword"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createUseIdLabel"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/createPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="504dp"
         android:ems="10"
+        android:hint="@string/prompt_password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="182dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="163dp" />
 
     <EditText
         android:id="@+id/createUserId"
@@ -35,18 +41,25 @@
         android:ems="10"
         android:hint="@string/user_ID"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="111dp" />
+        app:layout_constraintBottom_toTopOf="@+id/createPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toEndOf="@+id/createUseIdLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/createUserTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="171dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="182dp"
         android:text="@string/create_user_header"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,7 +67,20 @@
         android:id="@+id/createUseIdLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="72dp"
         android:text="@string/user_ID"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="126dp" />
+        app:layout_constraintEnd_toStartOf="@+id/createUserTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/userCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_user_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
 </androidx.constraintlayout.widget.ConstraintLayout>

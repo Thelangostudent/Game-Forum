@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.GameForumProject"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateUserActivity">
 
     <TextView
         android:id="@+id/createPasswordLabel"
+        style="@style/Theme.GameForumProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
@@ -24,6 +25,7 @@
 
     <EditText
         android:id="@+id/createPassword"
+        style="@style/Theme.GameForumProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="504dp"
@@ -36,6 +38,7 @@
 
     <EditText
         android:id="@+id/createUserId"
+        style="@style/Theme.GameForumProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -43,14 +46,15 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/createPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toEndOf="@+id/createUseIdLabel"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649"
+        app:layout_constraintVertical_bias="0.646"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/createUserTitle"
+        style="@style/Theme.GameForumProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="171dp"
@@ -65,10 +69,11 @@
 
     <TextView
         android:id="@+id/createUseIdLabel"
+        style="@style/Theme.GameForumProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="68dp"
         android:text="@string/user_ID"
         app:layout_constraintEnd_toStartOf="@+id/createUserTitle"
         app:layout_constraintTop_toTopOf="parent" />

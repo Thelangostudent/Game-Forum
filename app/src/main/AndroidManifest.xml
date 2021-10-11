@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameForumProject">
         <activity
+            android:name=".NewsDetailpage"
+            android:exported="true" />
+        <activity
+            android:name=".ThreeDModelDetailPage"
+            android:exported="true" />
+        <activity
+            android:name=".DiscussionDetailPage"
+            android:exported="true" />
+        <activity
+            android:name=".FanArtDetailPage"
+            android:exported="true" />
+        <activity
             android:name=".NewsActivity"
             android:exported="true" />
         <activity

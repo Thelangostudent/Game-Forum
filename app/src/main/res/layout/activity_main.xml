@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:text="BulletPoints"
         android:textColor="#FDFDFD"
-        tools:layout_editor_absoluteX="176dp"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
@@ -37,12 +38,63 @@
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="104dp" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="363dp" />
+
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MGC"
+        android:textColor="#21DD0D"
+        android:textSize="34sp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fan Art"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="187dp" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discussion"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="257dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3D models"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="454dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="News"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="301dp"
+        tools:layout_editor_absoluteY="14dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        style="@style/Theme.GameForumProject"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -26,7 +27,7 @@
         android:layout_marginBottom="1dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="@style/Theme.GameForumProject"
         app:layout_constraintBottom_toTopOf="@+id/btn_fanArtLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="FanArt"
         android:textAlignment="textStart"
-        android:textColor="#F8F3F3"
+        android:textColor="#0B0B0B"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="169dp"
         tools:layout_editor_absoluteY="87dp" />

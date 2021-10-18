@@ -7,6 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * This class is the main activity for this project.
+ * Acts as a main page with links to other parts of the App.
+ * @version alpha 0.1
+ * @author Gruppe 2
+ *
+ * */
 public class MainActivity extends AppCompatActivity {
 
     private Button threeDModels;
@@ -19,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // page buttons
         threeDModels = findViewById(R.id.btn_3dModels);
         fanArt = findViewById(R.id.btn_FanArt);
         discussion = findViewById(R.id.btn_discussion);

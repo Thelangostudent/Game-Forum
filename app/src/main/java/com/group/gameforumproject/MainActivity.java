@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button fanArt;
     private Button discussion;
     private Button newsButton;
+    private Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
         fanArt = findViewById(R.id.btn_FanArt);
         discussion = findViewById(R.id.btn_discussion);
         newsButton = findViewById(R.id.btn_News);
+        logoutButton = findViewById(R.id.btn_bulletPointsLogout);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(logoutIntent);
+            }
+        });
 
         threeDModels.setOnClickListener(new View.OnClickListener() {
             @Override

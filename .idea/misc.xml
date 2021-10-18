@@ -3,18 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_bullet_point.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_create_user.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_discussion.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_discussion_detail_page.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_fan_art.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_fan_art_detail_page.xml" value="0.35280797101449274" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_login.xml" value="0.35280797101449274" />
-<<<<<<< HEAD
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_news.xml" value="0.35280797101449274" />
+        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_news_detailpage.xml" value="0.5546875" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_three_dmodel_detail_page.xml" value="0.5546875" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_comment.xml" value="0.5546875" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_discussion.xml" value="0.5546875" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_fanart.xml" value="0.6478102189781022" />
-=======
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
->>>>>>> 6cbf57a7001301bc2bd1339ba42bffca541dc534
       </map>
     </option>
   </component>

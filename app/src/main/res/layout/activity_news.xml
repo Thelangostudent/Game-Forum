@@ -52,8 +52,9 @@
         android:layout_height="wrap_content"
         android:text="LatestNewsTitle"
         app:layout_constraintBottom_toTopOf="@+id/txt_LatestNewsDescription"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        tools:layout_editor_absoluteX="157dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
     <TextView
         android:id="@+id/txt_LatestNewsDescription"
@@ -62,15 +63,17 @@
         android:layout_marginBottom="136dp"
         android:text="LatestNewsDescription"
         app:layout_constraintBottom_toTopOf="@+id/txt_latestNewsAuthor"
-        tools:layout_editor_absoluteX="135dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_latestNewsAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="192dp"
+        android:layout_marginBottom="188dp"
         android:text="LatestNewsAuthor"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="157dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

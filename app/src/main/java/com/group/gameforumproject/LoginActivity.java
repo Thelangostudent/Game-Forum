@@ -44,5 +44,18 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(createUser);
             }
         });
+
+
+        /**
+         * This is a temporary method to get access to the rets of the app
+         * use serverlogic instead for final production
+         * */
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(loginIntent);
+            }
+        });
     }
 }

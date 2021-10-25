@@ -3,6 +3,7 @@ package com.group.gameforumproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Button createUser;
     Button login;
+    Button testModelViewer;
     EditText password;
     EditText username;
 
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         // user input fields
         password = findViewById(R.id.txt_Password);
         username = findViewById(R.id.txt_userName);
+        testModelViewer= findViewById(R.id.ModelViewerTest);
 
 
         //sends the user to the create user page
@@ -57,5 +60,16 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         });
+
+        testModelViewer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
+                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf"));
+                sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
+                startActivity(sceneViewerIntent);
+            }
+        });
+
     }
 }

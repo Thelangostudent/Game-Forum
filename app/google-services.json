@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "659704077905",
+    "project_id": "game-forum-backend",
+    "storage_bucket": "game-forum-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659704077905:android:7910fe6b3a754d0bcf2270",
+        "android_client_info": {
+          "package_name": "com.group.gameforumproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659704077905-rlpog3o16ac5v1n6i3jut5eufqon5js3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA07EBfaJWlWIt37_Eg4UqVXJvNpRFkEHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659704077905-rlpog3o16ac5v1n6i3jut5eufqon5js3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

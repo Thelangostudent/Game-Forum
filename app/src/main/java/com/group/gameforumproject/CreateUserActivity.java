@@ -120,8 +120,8 @@ public class CreateUserActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         Toast.makeText(CreateUserActivity.this, "User has been created!", Toast.LENGTH_LONG).show();
-//                                        Intent userCreated = new Intent(CreateUserActivity.this, LoginActivity.class);
-//                                        startActivity(userCreated);
+                                        Intent userCreated = new Intent(CreateUserActivity.this, LoginActivity.class);
+                                        startActivity(userCreated);
 
                                     } else {
                                         Toast.makeText(CreateUserActivity.this, "User was not created! Try again!", Toast.LENGTH_LONG).show();

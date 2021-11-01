@@ -1,14 +1,22 @@
 package com.group.gameforumproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.os.Environment;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 /**
@@ -27,10 +35,12 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     EditText username;
 
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
         // On page buttons
         createUser = findViewById(R.id.btn_createUser);
@@ -38,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         // user input fields
         password = findViewById(R.id.txt_Password);
         username = findViewById(R.id.txt_userName);
-        testModelViewer= findViewById(R.id.ModelViewerTest);
+        testModelViewer = findViewById(R.id.ModelViewerTest);
 
 
         //sends the user to the create user page
@@ -58,20 +68,50 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(loginIntent);
+                loginUser();
             }
         });
+    }
 
-        testModelViewer.setOnClickListener(new View.OnClickListener() {
+    private void loginUser() {
+
+
+        String emailString = this.username.getText().toString().trim();
+        String passwordString = this.password.getText().toString().trim();
+
+        if (emailString.isEmpty()) {
+            username.setError("Email is required!");
+            username.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailString).matches()) {
+            username.setError("This is not a valid email!");
+            username.requestFocus();
+            return;
+        }
+
+        if (passwordString.isEmpty()) {
+            password.setError("Password is required!");
+            password.requestFocus();
+            return;
+        }
+
+        if (passwordString.length() < 6) {
+            password.setError("Minimum length is 6 character!");
+            password.requestFocus();
+            return;
+        }
+        mAuth.signInWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick(View view) {
-                Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
-                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/mainShipRaw.gltf"));
-                sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
-                startActivity(sceneViewerIntent);
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "User is logged in", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
     }
 }

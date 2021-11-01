@@ -65,7 +65,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
-                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf"));
+                Uri modelIntent=
+                Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
+                        .appendQueryParameter("file", "Models/BoxTextured.glb")
+                        .appendQueryParameter("title", "ShipModel")
+                        .build();
+                sceneViewerIntent.setData(modelIntent);
                 sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
                 startActivity(sceneViewerIntent);
             }

@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
     Button createUser;
     Button login;
-    Button testModelViewer;
     EditText password;
     EditText username;
 
@@ -48,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         // user input fields
         password = findViewById(R.id.txt_Password);
         username = findViewById(R.id.txt_userName);
-        testModelViewer = findViewById(R.id.ModelViewerTest);
 
 
         //sends the user to the create user page

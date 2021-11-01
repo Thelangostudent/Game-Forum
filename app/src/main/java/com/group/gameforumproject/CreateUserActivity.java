@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 
 /**
  * This class creates the user and sends info to server.
@@ -114,7 +116,7 @@ public class CreateUserActivity extends AppCompatActivity {
                             User user = new User(emailString);
 
                             FirebaseDatabase.getInstance("https://game-forum-backend-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

@@ -6,4 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".DiscussionDetailPage">
 
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="379dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discusssioncommentRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="349dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="381dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

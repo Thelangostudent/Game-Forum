@@ -67,12 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
-                Uri modelIntent=
-                Uri.parse("https://arvr.google.com/scene-viewer/1.2").buildUpon()
-                        .appendQueryParameter("file", (Environment.getExternalStorageDirectory().getPath()+ "/Models/mainShipRaw.glb"))
-                        .appendQueryParameter("title", "ShipModel")
-                        .build();
-                sceneViewerIntent.setData(modelIntent);
+                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/mainShipRaw.gltf"));
                 sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
                 startActivity(sceneViewerIntent);
             }

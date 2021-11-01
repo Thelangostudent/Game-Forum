@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * This class is the main activity for this project.
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         threeDModels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,5 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(news);
             }
         });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
     }
 }

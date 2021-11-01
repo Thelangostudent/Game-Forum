@@ -12,6 +12,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
 
     Button shipModelButton;
     Button playercharacterButton;
+    Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,14 @@ public class ThreeDModelActivity extends AppCompatActivity {
                 sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/mainShipRaw.gltf"));
                 sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
                 startActivity(sceneViewerIntent);
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainpageIntent = new Intent(ThreeDModelActivity.this, MainActivity.class);
+                startActivity(mainpageIntent);
             }
         });
     }

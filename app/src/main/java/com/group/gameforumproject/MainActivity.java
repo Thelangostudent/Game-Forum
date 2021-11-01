@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 /**
  * This class is the main activity for this project.
  * Acts as a main page with links to other parts of the App.
@@ -21,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private Button discussion;
     private Button newsButton;
     private Button logoutButton;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         // page buttons
         threeDModels = findViewById(R.id.btn_3dModels);
@@ -37,10 +42,13 @@ public class MainActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mAuth.signOut();
                 Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(logoutIntent);
             }
         });
+
+
 
         threeDModels.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,5 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(news);
             }
         });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
     }
 }

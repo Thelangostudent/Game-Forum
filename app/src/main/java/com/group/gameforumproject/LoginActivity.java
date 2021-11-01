@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
                 Uri modelIntent=
                 Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
-                        .appendQueryParameter("file", "Models/BoxTextured.glb")
+                        .appendQueryParameter("file", "Models/mainShipRaw.glb")
                         .appendQueryParameter("title", "ShipModel")
                         .build();
                 sceneViewerIntent.setData(modelIntent);

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.os.Environment;
+
 
 /**
  * This class is the loginclass. It sends user login info to server.
@@ -67,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
                 Uri modelIntent=
                 Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
-                        .appendQueryParameter("file", "Models/mainShipRaw.glb")
+                        .appendQueryParameter("file", (Environment.getExternalStorageDirectory().getPath()+ "/Models/mainShipRaw.glb"))
                         .appendQueryParameter("title", "ShipModel")
                         .build();
                 sceneViewerIntent.setData(modelIntent);

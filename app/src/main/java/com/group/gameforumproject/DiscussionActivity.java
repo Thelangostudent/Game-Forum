@@ -28,7 +28,7 @@ public class DiscussionActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logoutIntent = new Intent(DiscussionActivity.this, LoginActivity.class);
+                Intent logoutIntent = new Intent(DiscussionActivity.this, MainActivity.class);
                 startActivity(logoutIntent);
             }
         });

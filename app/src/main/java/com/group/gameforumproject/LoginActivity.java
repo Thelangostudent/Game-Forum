@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btn_login);
         // user input fields
         password = findViewById(R.id.txt_Password);
+        password.setTransformationMethod(new AsteriskPassword());
         username = findViewById(R.id.txt_userName);
 
 

@@ -3,14 +3,16 @@ package com.group.gameforumproject;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 public class AsteriskPassword extends PasswordTransformationMethod {
     @Override
     public CharSequence getTransformation(CharSequence source, View view) {
         return new PasswordCharSequence(source);
     }
 
-    private class PasswordCharSequence implements CharSequence {
-        private CharSequence mSource;
+    private static class PasswordCharSequence implements CharSequence {
+        private final CharSequence mSource;
         public PasswordCharSequence(CharSequence source) {
             mSource = source; // Store char sequence
         }
@@ -20,6 +22,7 @@ public class AsteriskPassword extends PasswordTransformationMethod {
         public int length() {
             return mSource.length(); // Return default
         }
+        @NonNull
         public CharSequence subSequence(int start, int end) {
             return mSource.subSequence(start, end); // Return default
         }

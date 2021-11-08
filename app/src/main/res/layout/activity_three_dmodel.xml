@@ -73,6 +73,17 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <Button
+        android:id="@+id/btn_asteroid"
+        android:layout_width="345dp"
+        android:layout_height="55dp"
+        android:text="Asteroid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+
+    <Button
         android:id="@+id/btn_3dModelLogout."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -46,13 +46,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <Button
         android:id="@+id/btn_IngameShipModel"
         android:layout_width="344dp"
         android:layout_height="52dp"
-        android:text="in-gameShipModel"
+        android:text="Ship"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -64,7 +64,7 @@
         android:id="@+id/btn_playerCharacterModel"
         android:layout_width="345dp"
         android:layout_height="55dp"
-        android:text="Player character"
+        android:text="Player"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"

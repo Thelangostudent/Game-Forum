@@ -12,6 +12,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
 
     Button shipModelButton;
     Button playercharacterButton;
+    Button asteroid;
     Button logoutButton;
 
     @Override
@@ -39,5 +40,27 @@ public class ThreeDModelActivity extends AppCompatActivity {
                 startActivity(mainpageIntent);
             }
         });
+
+        playercharacterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
+                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/player.gltf"));
+                sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
+                startActivity(sceneViewerIntent);
+            }
+        });
+
+        asteroid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
+                sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/asteroid.gltf"));
+                sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
+                startActivity(sceneViewerIntent);
+            }
+        });
+
+
     }
 }

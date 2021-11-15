@@ -70,6 +70,12 @@ public class DiscussionActivity extends AppCompatActivity {
     private void dummyPostEntries()
     {
         DiscussionPost d1 = new DiscussionPost(0,"When is the game releasing?","Just wanted to know k thnx", commentList, user);
+        DiscussionPost d2 = new DiscussionPost(1, "LOL looking forward to your game", "What the title said", commentList, user);
+        DiscussionPost d3 = new DiscussionPost(2, "I must Alpha test!", "Am on my sigma grind, need to test a game", commentList, user);
+
+        discussionPostList.add(d1);
+        discussionPostList.add(d2);
+        discussionPostList.add(d3);
 
     }
 }

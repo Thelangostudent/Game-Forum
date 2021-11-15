@@ -33,7 +33,7 @@ public class Comments {
         this.commentid = commentid;
     }
 
-   
+
 
     public User getCommentByUser() {
         return commentByUser;

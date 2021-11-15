@@ -30,11 +30,12 @@ public class NewsActivity extends AppCompatActivity {
         latestNewsTitle = findViewById(R.id.txt_LatestNewsTitle);
         latestNewsDescription = findViewById(R.id.txt_LatestNewsDescription);
         latestNewsAuthor = findViewById(R.id.txt_latestNewsAuthor);
+        newsLogout = findViewById(R.id.btn_newsLogout);
 
         newsLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logoutIntent = new Intent (NewsActivity.this, LoginActivity.class);
+                Intent logoutIntent = new Intent (NewsActivity.this, MainActivity.class);
                 startActivity(logoutIntent);
             }
         });

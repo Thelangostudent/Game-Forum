@@ -38,6 +38,8 @@ public class DiscussionActivity extends AppCompatActivity {
         //page logout button
         logoutButton = findViewById(R.id.btn_discussionLogout);
 
+        addNewDiscssionPost = findViewById(R.id.btn_addDiscussionPost);
+
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,5 +53,13 @@ public class DiscussionActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.discussionRecyclerview);
 
         adapter = new DiscussionPostAdapter(discussionPostList,DiscussionActivity.this);
+
+        addNewDiscssionPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newDiscussionPost = new Intent(DiscussionActivity.this, CreateDiscussionPost.class);
+                startActivity(newDiscussionPost);
+            }
+        });
     }
 }

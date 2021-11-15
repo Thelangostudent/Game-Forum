@@ -35,7 +35,7 @@ public class NewsActivity extends AppCompatActivity {
         newsLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logoutIntent = new Intent (NewsActivity.this, LoginActivity.class);
+                Intent logoutIntent = new Intent (NewsActivity.this, MainActivity.class);
                 startActivity(logoutIntent);
             }
         });

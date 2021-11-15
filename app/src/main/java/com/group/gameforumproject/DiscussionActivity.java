@@ -64,6 +64,9 @@ public class DiscussionActivity extends AppCompatActivity {
                 startActivity(newDiscussionPost);
             }
         });
+
+        //fill list with dummy entries, implementing with firebase later.
+        dummyPostEntries();
     }
 
 

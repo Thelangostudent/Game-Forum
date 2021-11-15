@@ -37,6 +37,7 @@ public class CreateUserActivity extends AppCompatActivity {
 
     EditText password;
     EditText email;
+    EditText username;
     Button userCreated;
 
 
@@ -54,6 +55,7 @@ public class CreateUserActivity extends AppCompatActivity {
         // user input fields
         email = findViewById(R.id.createUserId);
         password = findViewById(R.id.createPassword);
+        username = findViewById(R.id.createUserName);
 
 
         // cancel button
@@ -81,19 +83,12 @@ public class CreateUserActivity extends AppCompatActivity {
         });
     }
 
-    /*@Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            reload();
-        }
-    }*/
 
     private void createAccount() {
 
         String emailString = this.email.getText().toString().trim();
         String passwordString = this.password.getText().toString().trim();
+        String usernameString = this.username.getText().toString().trim();
 
         if (emailString.isEmpty()){
             email.setError("Email is required!");
@@ -104,6 +99,12 @@ public class CreateUserActivity extends AppCompatActivity {
         if (!Patterns.EMAIL_ADDRESS.matcher(emailString).matches()){
             email.setError("This is not a valid email!");
             email.requestFocus();
+            return;
+        }
+
+        if (usernameString.isEmpty() || usernameString.length() < 4){
+            username.setError("This is not a valid username\nusername must be at least 4 character");
+            username.requestFocus();
             return;
         }
 
@@ -124,7 +125,7 @@ public class CreateUserActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(emailString);
+                            User user = new User(emailString, usernameString);
 
                             FirebaseDatabase.getInstance("https://game-forum-backend-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users")
                                     .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
@@ -152,32 +153,5 @@ public class CreateUserActivity extends AppCompatActivity {
 
     }
 
-   /* private void signIn(String email, String password) {
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(CreateUserActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }
-                });
-        // [END sign_in_with_email]
-    }
-
-    private void reload() {}
-
-    private void updateUI(FirebaseUser user) {
-
-    }*/
 }

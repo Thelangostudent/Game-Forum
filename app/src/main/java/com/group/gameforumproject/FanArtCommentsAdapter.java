@@ -29,7 +29,7 @@ public class FanArtCommentsAdapter extends RecyclerView.Adapter<FanArtCommentsAd
     @NonNull
     @Override
     public CommentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View row = LayoutInflater.from(mContext).inflate(R.layout.row_comment,parent,false);
+        View row = LayoutInflater.from(mContext).inflate(R.layout.one_fan_art_comment,parent,false);
         return new CommentViewHolder(row);
     }
 

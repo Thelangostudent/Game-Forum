@@ -3,10 +3,10 @@ package com.group.gameforumproject;
 public class DiscussionPost {
 
     private int id;
-    public String title;
-    public String description;
-    public Comments discussionComments;
-    public User user;
+    private String title;
+    private String description;
+    private Comments discussionComments;
+    private User user;
 
 
 

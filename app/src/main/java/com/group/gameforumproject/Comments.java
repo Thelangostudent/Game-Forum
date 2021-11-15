@@ -3,9 +3,9 @@ package com.group.gameforumproject;
 public class Comments {
 
     private int id;
-    public User commentByUser;
-    public String description;
-    public char postType;
+    private User commentByUser;
+    private String description;
+    private char postType;
 
     public Comments (int id, User commentByUser, String description, char postType)
     {

@@ -23,6 +23,8 @@ public class DiscussionActivity extends AppCompatActivity {
     public static ArrayList<DiscussionPost> DISCUSSIONLIST;
 
     public ArrayList<DiscussionPost> discussionPostList = new ArrayList<>();
+    public ArrayList<Comments> commentList = new ArrayList<>();
+    public User user;
 
     private RecyclerView recyclerView;
     private DiscussionPostAdapter adapter;
@@ -48,6 +50,7 @@ public class DiscussionActivity extends AppCompatActivity {
             }
         });
 
+        // sets up a globally accessible version of the discussionPosts.
         DISCUSSIONLIST = discussionPostList;
 
         recyclerView = findViewById(R.id.discussionRecyclerview);
@@ -61,5 +64,11 @@ public class DiscussionActivity extends AppCompatActivity {
                 startActivity(newDiscussionPost);
             }
         });
+    }
+
+
+    private void dummyPostEntries()
+    {
+        DiscussionPost d1 = new DiscussionPost(0,"When is the game releasing?","Just wanted to know k thnx")
     }
 }

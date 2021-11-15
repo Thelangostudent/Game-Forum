@@ -1,16 +1,18 @@
 package com.group.gameforumproject;
 
+import java.util.ArrayList;
+
 public class DiscussionPost {
 
     private int id;
     private String title;
     private String description;
-    private Comments discussionComments;
+    private ArrayList <Comments> discussionComments;
     private User user;
 
 
 
-    public DiscussionPost (int id, String title, String description, Comments discussionComments, User user)
+    public DiscussionPost (int id, String title, String description, ArrayList<Comments> discussionComments, User user)
     {
         this.id = id;
         this.title = title;
@@ -52,11 +54,11 @@ public class DiscussionPost {
         this.description = description;
     }
 
-    public Comments getDiscussionComments() {
+    public ArrayList <Comments> getDiscussionComments() {
         return discussionComments;
     }
 
-    public void setDiscussionComments(Comments discussionComments) {
+    public void setDiscussionComments(ArrayList<Comments> discussionComments) {
         this.discussionComments = discussionComments;
     }
 

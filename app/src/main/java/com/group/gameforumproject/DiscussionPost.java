@@ -6,16 +6,26 @@ public class DiscussionPost {
     public String title;
     public String description;
     public Comments discussionComments;
+    public User user;
 
 
 
-    public DiscussionPost (int id, String title, String description, Comments discussionComments)
+    public DiscussionPost (int id, String title, String description, Comments discussionComments, User user)
     {
         this.id = id;
         this.title = title;
         this.description = description;
         this.discussionComments = discussionComments;
+        this.user = user;
 
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getId() {

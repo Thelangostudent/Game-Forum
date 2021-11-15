@@ -69,6 +69,7 @@ public class DiscussionActivity extends AppCompatActivity {
 
     private void dummyPostEntries()
     {
-        DiscussionPost d1 = new DiscussionPost(0,"When is the game releasing?","Just wanted to know k thnx")
+        DiscussionPost d1 = new DiscussionPost(0,"When is the game releasing?","Just wanted to know k thnx", commentList, user);
+
     }
 }

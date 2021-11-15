@@ -1,6 +1,7 @@
 package com.group.gameforumproject;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -24,6 +25,11 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
     public DiscussionViewHolder onCreateViewHolder (ViewGroup parent, int viewType)
     {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.one_discussion,parent,false);
+
+        DiscussionViewHolder holder = new DiscussionViewHolder(view);
+
+        return holder;
 
     }
 
@@ -44,7 +50,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
         public DiscussionViewHolder(View postView)
         {
-            
+            super (postView);
         }
     }
 

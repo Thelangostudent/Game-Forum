@@ -8,6 +8,7 @@ public class DiscussionPost {
     public Comments discussionComments;
 
 
+
     public DiscussionPost (int id, String title, String description, Comments discussionComments)
     {
         this.id = id;
@@ -15,6 +16,38 @@ public class DiscussionPost {
         this.description = description;
         this.discussionComments = discussionComments;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Comments getDiscussionComments() {
+        return discussionComments;
+    }
+
+    public void setDiscussionComments(Comments discussionComments) {
+        this.discussionComments = discussionComments;
     }
 
     /**

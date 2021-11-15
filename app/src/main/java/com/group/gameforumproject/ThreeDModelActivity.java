@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -19,6 +20,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
 
     Button viewModelButton;
     Button logoutButton;
+    TextView warningText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class ThreeDModelActivity extends AppCompatActivity {
 
         logoutButton= findViewById(R.id.btn_3dModelLogout_);
         viewModelButton= findViewById(R.id.btn_viewModelButton);
+
+        warningText = findViewById(R.id.warningText);
+        warningText.setVisibility(View.INVISIBLE);
 
         Spinner spinner=findViewById(R.id.spinner);
         int singleItem = R.layout.spinner_dropdown_item;
@@ -96,11 +101,16 @@ public class ThreeDModelActivity extends AppCompatActivity {
                 break;
         }
 
+        warningText = findViewById(R.id.warningText);
+
         if (!selectedModel.equals("none")){
+            warningText.setVisibility(View.INVISIBLE);
             Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
             sceneViewerIntent.setData(Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/Thelangostudent/Models/master/ShipModel/" + selectedModel + ".gltf"));
             sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox");
             startActivity(sceneViewerIntent);
+        } else {
+            warningText.setVisibility(View.VISIBLE);
         }
     }
 
@@ -108,20 +118,25 @@ public class ThreeDModelActivity extends AppCompatActivity {
     public void updatePicture(Context context){
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         String text = mySpinner.getSelectedItem().toString();
+        warningText = findViewById(R.id.warningText);
 
         String imageResultURL = "none";
         switch (text) {
             case "Ship":
                 imageResultURL = "shipPicture.png";
+                warningText.setVisibility(View.INVISIBLE);
                 break;
             case "Player":
                 imageResultURL = "player.png";
+                warningText.setVisibility(View.INVISIBLE);
                 break;
             case "Asteroid":
                 imageResultURL = "asteroid.png";
+                warningText.setVisibility(View.INVISIBLE);
                 break;
             case "Forest Village Planet":
                 imageResultURL = "forestVillagePlanet.png";
+                warningText.setVisibility(View.INVISIBLE);
                 break;
             case "Select model":
                 imageResultURL = "none.png";

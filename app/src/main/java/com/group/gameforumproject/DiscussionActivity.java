@@ -47,5 +47,9 @@ public class DiscussionActivity extends AppCompatActivity {
         });
 
         DISCUSSIONLIST = discussionPostList;
+
+        recyclerView = findViewById(R.id.discussionRecyclerview);
+
+        adapter = new DiscussionPostAdapter(discussionPostList,DiscussionActivity.this);
     }
 }

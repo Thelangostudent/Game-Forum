@@ -22,7 +22,7 @@ public class FanArtActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logoutIntent = new Intent (FanArtActivity.this, LoginActivity.class);
+                Intent logoutIntent = new Intent (FanArtActivity.this, MainActivity.class);
                 startActivity(logoutIntent);
             }
         });

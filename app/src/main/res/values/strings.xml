@@ -4,4 +4,12 @@
     <string name="user_ID">User ID </string>
     <string name="prompt_password">Password </string>
     <string name="cancel_button">Cancel</string>
+
+    <string-array name="models">
+        <item>Select model</item>
+        <item>Ship</item>
+        <item>Player</item>
+        <item>Asteroid</item>
+        <item>Forest Village Planet</item>
+    </string-array>
 </resources>

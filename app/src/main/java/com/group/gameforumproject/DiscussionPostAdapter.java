@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,7 +36,12 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position)
+    {
+        holder.discussionPostDescription.setText(discussionList.get(position).getDescription());
+        holder.discussionPostTitle.setText(discussionList.get(position).getTitle());
+        holder.discussionUserName.setText("Dummy");
+
 
     }
 
@@ -46,11 +53,20 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
     public class DiscussionViewHolder extends RecyclerView.ViewHolder
     {
+        ImageView discussionProfilePicture;
+        TextView discussionUserName;
+        TextView discussionPostTitle;
+        TextView discussionPostDescription;
 
 
         public DiscussionViewHolder(View postView)
         {
             super (postView);
+            discussionProfilePicture = postView.findViewById(R.id.img_userProfileOneDiscussion);
+            discussionUserName = postView.findViewById(R.id.txt_OneDiscussionUserName);
+            discussionPostTitle = postView.findViewById(R.id.txt_OneDiscsussionTitle);
+            discussionPostDescription = postView.findViewById(R.id.txt_LatestNewsDescription);
+
         }
     }
 

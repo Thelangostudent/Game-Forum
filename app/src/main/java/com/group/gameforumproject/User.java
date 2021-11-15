@@ -3,7 +3,7 @@ package com.group.gameforumproject;
 public class User {
 
     public String email;
-
+    public String userName;
 
 
     public User(){}

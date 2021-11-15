@@ -39,6 +39,7 @@ public class CreateUserActivity extends AppCompatActivity {
     EditText email;
     Button userCreated;
 
+
     private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
 
@@ -48,13 +49,23 @@ public class CreateUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_user);
         mAuth = FirebaseAuth.getInstance();
 
+
+
         // user input fields
         email = findViewById(R.id.createUserId);
         password = findViewById(R.id.createPassword);
 
 
+        // cancel button
 
-
+        Button cancel = findViewById(R.id.cancel_button);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cancel = new Intent(CreateUserActivity.this, LoginActivity.class);
+                startActivity(cancel);
+            }
+        });
 
 
         // button that sends user data to server and sends user to login page

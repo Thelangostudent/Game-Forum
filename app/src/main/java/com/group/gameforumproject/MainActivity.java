@@ -19,11 +19,6 @@ import com.google.firebase.auth.FirebaseUser;
  * */
 public class MainActivity extends AppCompatActivity {
 
-    private Button threeDModels;
-    private Button fanArt;
-    private Button discussion;
-    private Button newsButton;
-    private Button logoutButton;
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         // page buttons
-        threeDModels = findViewById(R.id.btn_3dModels);
-        fanArt = findViewById(R.id.btn_FanArt);
-        discussion = findViewById(R.id.btn_discussion);
-        newsButton = findViewById(R.id.btn_News);
-        logoutButton = findViewById(R.id.btn_bulletPointsLogout);
+        Button threeDModels = findViewById(R.id.btn_3dModels);
+        Button fanArt = findViewById(R.id.btn_FanArt);
+        Button discussion = findViewById(R.id.btn_discussion);
+        Button newsButton = findViewById(R.id.btn_News);
+        Button logoutButton = findViewById(R.id.btn_bulletPointsLogout);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override

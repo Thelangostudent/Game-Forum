@@ -3,4 +3,5 @@
     <string name="create_user_header">Create User</string>
     <string name="user_ID">User ID </string>
     <string name="prompt_password">Password </string>
+    <string name="cancel_button">Cancel</string>
 </resources>

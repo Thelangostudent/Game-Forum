@@ -1,8 +1,15 @@
 package com.group.gameforumproject;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -10,12 +17,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,6 +49,14 @@ public class CreateUserActivity extends AppCompatActivity {
     Button userCreated;
 
 
+    //profile picture
+    ImageView ImgUserPhoto;
+    ImageView addImage;
+    ActivityResultLauncher<String> getContent;
+    static int PReqCode = 1;
+    static int REQUESCODE = 1;
+    Uri pickedImgUri;
+
     private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
 
@@ -49,7 +65,6 @@ public class CreateUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
         mAuth = FirebaseAuth.getInstance();
-
 
 
         // user input fields
@@ -81,7 +96,47 @@ public class CreateUserActivity extends AppCompatActivity {
 
             }
         });
+
+        ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
+        addImage = findViewById(R.id.add_image);
+
+        addImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (Build.VERSION.SDK_INT >= 22) {
+
+                    checkAndRequestForPermission();
+
+
+                }
+                else
+                {
+                    openGallery();
+                }
+
+
+
+
+
+            }
+        });
+
+        getContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
+                new ActivityResultCallback<Uri>() {
+                    @Override
+                    public void onActivityResult(Uri result) {
+                        ImgUserPhoto.setImageURI(result);
+                    }
+                });
+
+
     }
+
+
+
+
+
 
 
     private void createAccount() {
@@ -152,6 +207,55 @@ public class CreateUserActivity extends AppCompatActivity {
                 });
 
     }
+
+    //profile picture code
+    private void openGallery() {
+        getContent.launch("image/*");
+    }
+
+    private void checkAndRequestForPermission() {
+
+
+        if (ContextCompat.checkSelfPermission(CreateUserActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(CreateUserActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+                Toast.makeText(CreateUserActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
+
+            }
+
+            else
+            {
+                ActivityCompat.requestPermissions(CreateUserActivity.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        PReqCode);
+            }
+
+        }
+        else
+            openGallery();
+
+    }
+
+
+
+
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
+
+            // the user has successfully picked an image
+            // we need to save its reference to a Uri variable
+            pickedImgUri = data.getData() ;
+            ImgUserPhoto.setImageURI(pickedImgUri);
+
+
+        }
+
+
+    }*/
 
 
 }

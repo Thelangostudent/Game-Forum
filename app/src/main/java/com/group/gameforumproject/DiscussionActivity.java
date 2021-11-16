@@ -1,6 +1,7 @@
 package com.group.gameforumproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -50,12 +51,26 @@ public class DiscussionActivity extends AppCompatActivity {
             }
         });
 
+        //fill list with dummy entries, implementing with firebase later.
+        dummyPostEntries();
+
+
         // sets up a globally accessible version of the discussionPosts.
         DISCUSSIONLIST = discussionPostList;
 
         recyclerView = findViewById(R.id.discussionRecyclerview);
 
         adapter = new DiscussionPostAdapter(discussionPostList,DiscussionActivity.this);
+
+        recyclerView.setHasFixedSize(true);
+
+
+
+        layoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setAdapter(adapter);
 
         addNewDiscssionPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +80,7 @@ public class DiscussionActivity extends AppCompatActivity {
             }
         });
 
-        //fill list with dummy entries, implementing with firebase later.
-        dummyPostEntries();
+
     }
 
 

@@ -31,6 +31,10 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
         DiscussionViewHolder holder = new DiscussionViewHolder(view);
 
+        System.out.println(discussionList.size());
+
+        System.out.println(discussionList.get(0).getDescription());
+
         return holder;
 
     }
@@ -38,34 +42,35 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     @Override
     public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position)
     {
-        holder.discussionPostDescription.setText(discussionList.get(position).getDescription());
-        holder.discussionPostTitle.setText(discussionList.get(position).getTitle());
-        holder.discussionUserName.setText("Dummy");
+        holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
+        holder.txt_OneDiscsussionTitle.setText(discussionList.get(position).getTitle());
+        holder.txt_OneDiscussionUserName.setText("Dummy");
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return discussionList.size();
     }
 
 
     public class DiscussionViewHolder extends RecyclerView.ViewHolder
     {
-        ImageView discussionProfilePicture;
-        TextView discussionUserName;
-        TextView discussionPostTitle;
-        TextView discussionPostDescription;
+        ImageView img_userProfileOneDiscussion;
+        TextView txt_OneDiscussionUserName;
+        TextView txt_OneDiscsussionTitle;
+        TextView txt_OneDiscsussionDescription;
 
 
-        public DiscussionViewHolder(View postView)
+        public DiscussionViewHolder(View itemView)
         {
-            super (postView);
-            discussionProfilePicture = postView.findViewById(R.id.img_userProfileOneDiscussion);
-            discussionUserName = postView.findViewById(R.id.txt_OneDiscussionUserName);
-            discussionPostTitle = postView.findViewById(R.id.txt_OneDiscsussionTitle);
-            discussionPostDescription = postView.findViewById(R.id.txt_LatestNewsDescription);
+            super (itemView);
+            img_userProfileOneDiscussion = itemView.findViewById(R.id.img_userProfileOneDiscussion);
+            txt_OneDiscussionUserName = itemView.findViewById(R.id.txt_OneDiscussionUserName);
+            txt_OneDiscsussionTitle = itemView.findViewById(R.id.txt_OneDiscsussionTitle);
+            txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_LatestNewsDescription);
+
 
         }
     }

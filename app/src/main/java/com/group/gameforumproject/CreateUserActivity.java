@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 import android.widget.ImageView;
@@ -28,7 +29,12 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.Objects;
 
@@ -126,7 +132,8 @@ public class CreateUserActivity extends AppCompatActivity {
                 new ActivityResultCallback<Uri>() {
                     @Override
                     public void onActivityResult(Uri result) {
-                        ImgUserPhoto.setImageURI(result);
+                        pickedImgUri = result;
+                        ImgUserPhoto.setImageURI(pickedImgUri);
                     }
                 });
 
@@ -189,8 +196,7 @@ public class CreateUserActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         Toast.makeText(CreateUserActivity.this, "User has been created!", Toast.LENGTH_LONG).show();
-                                        Intent userCreated = new Intent(CreateUserActivity.this, LoginActivity.class);
-                                        startActivity(userCreated);
+                                        updateUserInfo( usernameString ,pickedImgUri,mAuth.getCurrentUser());
 
                                     } else {
                                         Toast.makeText(CreateUserActivity.this, "User was not created! Try again!", Toast.LENGTH_LONG).show();
@@ -207,6 +213,67 @@ public class CreateUserActivity extends AppCompatActivity {
                 });
 
     }
+
+    // update user photo and name
+    private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {
+
+        // first we need to upload user photo to firebase storage and get url
+
+        StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
+        final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
+        imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                // image uploaded succesfully
+                // now we can get our image url
+
+                imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        // uri contain user image url
+
+
+                        UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .setPhotoUri(uri)
+                                .build();
+
+
+                        currentUser.updateProfile(profleUpdate)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                        if (task.isSuccessful()) {
+                                            // user info updated successfully
+                                            Toast.makeText(getApplicationContext(),"Register Complete",Toast.LENGTH_LONG).show();
+                                            Intent userCreated = new Intent(CreateUserActivity.this, LoginActivity.class);
+                                            startActivity(userCreated);
+                                        }
+
+                                    }
+                                });
+
+                    }
+                });
+
+
+
+
+
+            }
+        });
+
+
+
+
+
+
+    }
+
+
 
     //profile picture code
     private void openGallery() {

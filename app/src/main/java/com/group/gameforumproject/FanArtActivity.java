@@ -1,11 +1,21 @@
 package com.group.gameforumproject;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -13,6 +23,7 @@ public class FanArtActivity extends AppCompatActivity {
 
     Button logout;
     FloatingActionButton create_post;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +48,11 @@ public class FanArtActivity extends AppCompatActivity {
             startActivity(create_fan_art_intent);
         });
 
+
+
     }
+
+
+
+
 }

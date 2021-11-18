@@ -19,6 +19,7 @@ public class NewsActivity extends AppCompatActivity {
     TextView latestNewsTitle;
     TextView latestNewsDescription;
     TextView latestNewsAuthor;
+
     Button newsLogout;
 
     @Override
@@ -26,10 +27,13 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        //TODO: WIP -Rorvik
+
         //fields for the news article
         latestNewsTitle = findViewById(R.id.txt_LatestNewsTitle);
         latestNewsDescription = findViewById(R.id.txt_LatestNewsDescription);
         latestNewsAuthor = findViewById(R.id.txt_latestNewsAuthor);
+
         newsLogout = findViewById(R.id.btn_newsLogout);
 
         newsLogout.setOnClickListener(new View.OnClickListener() {

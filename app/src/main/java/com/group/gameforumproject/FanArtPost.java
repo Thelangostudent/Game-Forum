@@ -17,7 +17,7 @@ public class FanArtPost {
 
     private String username;
 
-    public FanArtPost (String title, String description, String picture, String userId, String userPhoto)
+    public FanArtPost (String title, String description, String picture, String userId, String userPhoto, String username)
     {
         this.id = id;
         this.title = title;

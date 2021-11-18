@@ -82,6 +82,7 @@ public class CreateFanArtPost extends AppCompatActivity {
         EditText title = findViewById(R.id.post_creation_title);
         EditText description = findViewById(R.id.post_creation_description);
 
+
         addButton = findViewById(R.id.addButton);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +116,8 @@ public class CreateFanArtPost extends AppCompatActivity {
                                             description.getText().toString(),
                                             imageDownlaodLink,
                                             currentUser.getUid(),
-                                            currentUser.getPhotoUrl().toString());
+                                            currentUser.getPhotoUrl().toString(),
+                                            currentUser.getDisplayName());
 
                                     // Add post to firebase database
 

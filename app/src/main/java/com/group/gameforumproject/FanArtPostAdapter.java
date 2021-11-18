@@ -38,6 +38,7 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.tvTitle.setText(mData.get(position).getTitle());
+        holder.name.setText(mData.get(position).getUsername());
         Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
         Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
@@ -51,6 +52,7 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle;
+        TextView name;
         ImageView imgPost;
         ImageView imgPostProfile;
 
@@ -60,6 +62,7 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
             tvTitle = itemView.findViewById(R.id.row_post_title);
             imgPost = itemView.findViewById(R.id.row_post_img);
             imgPostProfile = itemView.findViewById(R.id.row_post_profile_img);
+            name = itemView.findViewById(R.id.row_post_user);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

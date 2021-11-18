@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -60,11 +59,8 @@ public class CreateUserActivity extends AppCompatActivity {
     ImageView addImage;
     ActivityResultLauncher<String> getContent;
     static int PReqCode = 1;
-    static int REQUESCODE = 1;
     Uri pickedImgUri;
-
     private FirebaseAuth mAuth;
-    private static final String TAG = "EmailPassword";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,50 +78,37 @@ public class CreateUserActivity extends AppCompatActivity {
         // cancel button
 
         Button cancel = findViewById(R.id.cancel_button);
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cancel = new Intent(CreateUserActivity.this, LoginActivity.class);
-                startActivity(cancel);
-            }
+        cancel.setOnClickListener(view -> {
+            Intent cancel1 = new Intent(CreateUserActivity.this, LoginActivity.class);
+            startActivity(cancel1);
         });
 
 
         // button that sends user data to server and sends user to login page
         userCreated = findViewById(R.id.userCreated);
 
-        userCreated.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createAccount();
-
-
-            }
-        });
+        userCreated.setOnClickListener(view -> createAccount());
 
         ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
         addImage = findViewById(R.id.add_image);
 
-        addImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        addImage.setOnClickListener(view -> {
 
-                if (Build.VERSION.SDK_INT >= 22) {
+            if (Build.VERSION.SDK_INT >= 22) {
 
-                    checkAndRequestForPermission();
-
-
-                }
-                else
-                {
-                    openGallery();
-                }
-
-
-
+                checkAndRequestForPermission();
 
 
             }
+            else
+            {
+                openGallery();
+            }
+
+
+
+
+
         });
 
         getContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
@@ -225,7 +208,7 @@ public class CreateUserActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                // image uploaded succesfully
+                // image uploaded successfully
                 // now we can get our image url
 
                 imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -235,13 +218,13 @@ public class CreateUserActivity extends AppCompatActivity {
                         // uri contain user image url
 
 
-                        UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
+                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
                                 .setDisplayName(name)
                                 .setPhotoUri(uri)
                                 .build();
 
 
-                        currentUser.updateProfile(profleUpdate)
+                        currentUser.updateProfile(profileUpdate)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
@@ -311,7 +294,7 @@ public class CreateUserActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
+        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null ) {
 
             // the user has successfully picked an image
             // we need to save its reference to a Uri variable

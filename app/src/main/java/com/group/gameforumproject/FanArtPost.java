@@ -13,7 +13,11 @@ public class FanArtPost {
     private String userPhoto;
     private Object timestamp;
 
-    public FanArtPost (int id, String title, String description, String userId, String picture, String userPhoto)
+
+
+    private String username;
+
+    public FanArtPost (int id, String username, String title, String description, String userId, String picture, String userPhoto)
     {
         this.id = id;
         this.title = title;
@@ -22,9 +26,19 @@ public class FanArtPost {
         this.userPhoto = userPhoto;
         this.timestamp = ServerValue.TIMESTAMP;
         this.description = description;
+        this.username = username;
     }
 
     public FanArtPost(){}
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getPostKey() {
         return postKey;

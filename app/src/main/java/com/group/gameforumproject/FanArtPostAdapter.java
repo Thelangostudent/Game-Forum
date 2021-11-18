@@ -72,8 +72,7 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
                     postDetailActivity.putExtra("description",mData.get(position).getDescription());
                     postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
                     postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
-                    // will fix this later i forgot to add user name to post object
-                    //postDetailActivity.putExtra("userName",mData.get(position).getUsername);
+                    postDetailActivity.putExtra("userName",mData.get(position).getUsername());
                     long timestamp  = (long) mData.get(position).getTimestamp();
                     postDetailActivity.putExtra("postDate",timestamp) ;
                     mContext.startActivity(postDetailActivity);

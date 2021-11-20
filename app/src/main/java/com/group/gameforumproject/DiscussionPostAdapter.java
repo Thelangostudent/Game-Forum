@@ -42,7 +42,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     @Override
     public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position)
     {
-        holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
+       // holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
         holder.txt_OneDiscsussionTitle.setText(discussionList.get(position).getTitle());
         holder.txt_OneDiscussionUserName.setText("Dummy");
 

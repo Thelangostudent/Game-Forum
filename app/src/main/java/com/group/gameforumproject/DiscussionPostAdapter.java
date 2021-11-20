@@ -27,7 +27,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
     public DiscussionViewHolder onCreateViewHolder (ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.one_discussion,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.one_discussion,parent,false);
 
         DiscussionViewHolder holder = new DiscussionViewHolder(view);
 
@@ -42,7 +42,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     @Override
     public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position)
     {
-       // holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
+        holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
         holder.txt_OneDiscsussionTitle.setText(discussionList.get(position).getTitle());
         holder.txt_OneDiscussionUserName.setText("Dummy");
 
@@ -69,7 +69,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
             img_userProfileOneDiscussion = itemView.findViewById(R.id.img_userProfileOneDiscussion);
             txt_OneDiscussionUserName = itemView.findViewById(R.id.txt_OneDiscussionUserName);
             txt_OneDiscsussionTitle = itemView.findViewById(R.id.txt_OneDiscsussionTitle);
-            txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_LatestNewsDescription);
+            txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_OneDiscsussionDescription);
 
 
         }

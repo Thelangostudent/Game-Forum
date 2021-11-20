@@ -17,8 +17,8 @@ import java.util.List;
 
 public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.MyViewHolder> {
 
-    Context mContext;
-    List<FanArtPost> mData ;
+   private Context mContext;
+   private List<FanArtPost> mData ;
 
 
     public FanArtPostAdapter(Context mContext, List<FanArtPost> mData) {

@@ -79,10 +79,10 @@ public class FanArtDetailPage extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://game-forum-backend-default-rtdb.europe-west1.firebasedatabase.app/");
 
 
-        // add Comment button click listner
+        // add Comment button click listener
 
         btnAddComment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,8 +93,8 @@ public class FanArtDetailPage extends AppCompatActivity {
                 String comment_content = editTextComment.getText().toString();
                 String uid = firebaseUser.getUid();
                 String uname = firebaseUser.getDisplayName();
-                String uimg = firebaseUser.getPhotoUrl().toString();
-                FanArtComments comment = new FanArtComments(comment_content,uid,uimg,uname);
+                String uImg = firebaseUser.getPhotoUrl().toString();
+                FanArtComments comment = new FanArtComments(comment_content,uid,uImg,uname);
 
                 commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -117,7 +117,7 @@ public class FanArtDetailPage extends AppCompatActivity {
 
 
         // now we need to bind all data into those views
-        // firt we need to get post data
+        // first we need to get post data
         // we need to send post detail data to this activity first ...
         // now we can get post data
 
@@ -127,13 +127,13 @@ public class FanArtDetailPage extends AppCompatActivity {
         String postTitle = getIntent().getExtras().getString("title");
         txtPostTitle.setText(postTitle);
 
-        String userpostImage = getIntent().getExtras().getString("userPhoto");
-        Glide.with(this).load(userpostImage).into(imgUserPost);
+        String userPostImage = getIntent().getExtras().getString("userPhoto");
+        Glide.with(this).load(userPostImage).into(imgUserPost);
 
         String postDescription = getIntent().getExtras().getString("description");
         txtPostDesc.setText(postDescription);
 
-        // setcomment user image
+        // setComment user image
 
         Glide.with(this).load(firebaseUser.getPhotoUrl()).into(imgCurrentUser);
         // get post id

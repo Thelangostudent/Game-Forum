@@ -8,7 +8,7 @@
     android:background="#f4f4f4"
     android:paddingTop="8dp">
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/comment_user_img"
         android:layout_width="42dp"
         android:layout_height="42dp"
@@ -17,12 +17,17 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/astronaut_maybe_working"
+        app:riv_border_color="#333333"
+        app:riv_border_width="2dip"
+        app:riv_corner_radius="30dip"
+        app:riv_mutate_background="false"
+        app:riv_oval="true"/>
 
     <TextView
         android:textColor="#969595"
         android:textStyle="bold"
-        android:id="@+id/comment_username"
+        android:id="@+id/fa_comment_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/comment_content"
+        android:id="@+id/fa_comment_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -47,11 +52,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/comment_user_img"
-        app:layout_constraintTop_toBottomOf="@+id/comment_username" />
+        app:layout_constraintTop_toBottomOf="@+id/fa_comment_username" />
 
     <TextView
         android:textSize="12sp"
-        android:id="@+id/comment_date"
+        android:id="@+id/fa_comment_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -62,6 +67,6 @@
         android:text="10:20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/comment_username"
+        app:layout_constraintStart_toEndOf="@+id/fa_comment_username"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

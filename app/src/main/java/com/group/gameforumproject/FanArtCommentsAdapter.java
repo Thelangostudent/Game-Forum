@@ -1,6 +1,8 @@
 package com.group.gameforumproject;
 
 import android.content.Context;
+
+
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.Calendar;
 import java.util.List;
@@ -36,7 +40,7 @@ public class FanArtCommentsAdapter extends RecyclerView.Adapter<FanArtCommentsAd
     @Override
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
 
-
+        Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
         holder.tv_name.setText(mData.get(position).getUname());
         holder.tv_content.setText(mData.get(position).getContent());
         holder.tv_date.setText(timestampToString((Long)mData.get(position).getTimestamp()));
@@ -55,10 +59,10 @@ public class FanArtCommentsAdapter extends RecyclerView.Adapter<FanArtCommentsAd
 
         public CommentViewHolder(View itemView) {
             super(itemView);
-
-            tv_name = itemView.findViewById(R.id.comment_username);
-            tv_content = itemView.findViewById(R.id.comment_content);
-            tv_date = itemView.findViewById(R.id.comment_date);
+            img_user = itemView.findViewById(R.id.comment_user_img);
+            tv_name = itemView.findViewById(R.id.fa_comment_username);
+            tv_content = itemView.findViewById(R.id.fa_comment_content);
+            tv_date = itemView.findViewById(R.id.fa_comment_date);
         }
     }
 

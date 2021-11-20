@@ -27,7 +27,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
     public DiscussionViewHolder onCreateViewHolder (ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.one_discussion,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.one_discussion,parent,false);
 
         DiscussionViewHolder holder = new DiscussionViewHolder(view);
 

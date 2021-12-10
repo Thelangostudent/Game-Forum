@@ -22,6 +22,8 @@ public class DiscussionPost {
 
     }
 
+    public DiscussionPost(){}
+
     public User getUser() {
         return user;
     }

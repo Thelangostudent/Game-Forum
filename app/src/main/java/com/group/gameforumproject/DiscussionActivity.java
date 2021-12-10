@@ -1,5 +1,6 @@
 package com.group.gameforumproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,8 +12,11 @@ import android.widget.Button;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -58,7 +62,7 @@ public class DiscussionActivity extends AppCompatActivity {
         });
 
         //fill list with dummy entries, implementing with firebase later.
-        dummyPostEntries();
+       // dummyPostEntries();
 
 
         // sets up a globally accessible version of the discussionPosts.
@@ -75,7 +79,7 @@ public class DiscussionActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setAdapter(adapter);
+
 
         addNewDiscssionPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,17 +89,46 @@ public class DiscussionActivity extends AppCompatActivity {
             }
         });
 
-        for (DiscussionPost post : discussionPostList)
-        {
-            addPost(post);
-        }
+
+
+
+        remoteDataBase = FirebaseDatabase.getInstance("https://game-forum-backend-default-rtdb.europe-west1.firebasedatabase.app/");
+        referenceData = remoteDataBase.getReference("DiscussionPostBeta");
+        referenceData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
+
+                    DiscussionPost post = postsnap.getValue(DiscussionPost.class);
+                    discussionPostList.add(post) ;
+
+
+
+                }
+
+                DISCUSSIONLIST = discussionPostList;
+
+                recyclerView.setAdapter(adapter);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
 
 
 
 
-
+/***
     private void dummyPostEntries() {
         DiscussionPost d1 = new DiscussionPost(0, "When is the game releasing?", "Just wanted to know k thnx", commentList, user);
         DiscussionPost d2 = new DiscussionPost(1, "LOL looking forward to your game", "What the title said", commentList, user);
@@ -106,7 +139,7 @@ public class DiscussionActivity extends AppCompatActivity {
         discussionPostList.add(d3);
 
     }
-
+*/
     // this is just a test method lifted from CreateFanPosts. DO NOT USE FOR FINAL IMPLEMENTATION.
     private void addPost(DiscussionPost discussionPost) {
 

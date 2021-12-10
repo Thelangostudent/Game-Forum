@@ -52,7 +52,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
         ImageView previewImage=(ImageView) findViewById(R.id.previewImage);
 
         Glide.with(context)
-                .load("https://raw.githubusercontent.com/Thelangostudent/Models/master/Pictures/none.png")
+                .load("https://raw.githubusercontent.com/Thelangostudent/Models/master/Pictures/noneNew.png")
                 .into(previewImage);
 
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(context, R.array.models, singleItem);
@@ -139,7 +139,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
                 warningText.setVisibility(View.INVISIBLE);
                 break;
             case "Select model":
-                imageResultURL = "none.png";
+                imageResultURL = "noneNew.png";
                 break;
         }
 

@@ -85,7 +85,7 @@
         android:id="@+id/spinner"
         android:layout_width="345dp"
         android:layout_height="54dp"
-        android:background="#3700B3"
+        android:background="#8B5027"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -50,36 +50,33 @@
         android:id="@+id/txt_LatestNewsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LatestNewsTitle"
-        app:layout_constraintBottom_toTopOf="@+id/txt_LatestNewsDescription"
+        android:layout_marginTop="48dp"
+        android:text="The game just released!"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.757" />
-
-    <TextView
-        android:id="@+id/txt_LatestNewsDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LatestNewsDescription"
-        app:layout_constraintBottom_toTopOf="@+id/txt_latestNewsAuthor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
     <TextView
         android:id="@+id/txt_latestNewsAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LatestNewsAuthor"
+        android:text="PlanetAdventureDevTeam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.824" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planet adventure released to a warm reception. /n We have worked hard to finally show it off. /n It is available from our itch.io page, take a look. /n From all of us at PlanetAdvetureDevTeam /n we wish you good holidays ;)"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="198dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

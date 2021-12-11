@@ -98,7 +98,6 @@ public class CreateFanArtPost extends AppCompatActivity {
                         && pickedImgUri != null ) {
 
                     //everything is okey no empty or null value
-                    // TODO Create Post Object and add it to firebase database
                     // first we need to upload post Image
                     // access firebase storage
                     StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("blog_images");
@@ -142,12 +141,6 @@ public class CreateFanArtPost extends AppCompatActivity {
 
                         }
                     });
-
-
-
-
-
-
 
 
                 }

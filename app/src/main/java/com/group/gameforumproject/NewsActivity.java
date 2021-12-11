@@ -30,9 +30,9 @@ public class NewsActivity extends AppCompatActivity {
         //TODO: WIP -Rorvik
 
         //fields for the news article
-        latestNewsTitle = findViewById(R.id.txt_LatestNewsTitle);
-        latestNewsDescription = findViewById(R.id.txt_LatestNewsDescription);
-        latestNewsAuthor = findViewById(R.id.txt_latestNewsAuthor);
+        //latestNewsTitle = findViewById(R.id.txt_LatestNewsTitle);
+        //latestNewsDescription = findViewById(R.id.txt_LatestNewsDescription);
+        //latestNewsAuthor = findViewById(R.id.txt_latestNewsAuthor);
 
         newsLogout = findViewById(R.id.btn_newsLogout);
 

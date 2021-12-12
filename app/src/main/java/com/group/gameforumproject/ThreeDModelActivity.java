@@ -68,6 +68,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
             }
         });
 
+        //sends the user back to the main page
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +78,7 @@ public class ThreeDModelActivity extends AppCompatActivity {
         });
     }
 
-
+    //Starts the 3D model viewer if a model has been selected from the dropdown spinner menu
     public void startModelViewer(){
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         String text = mySpinner.getSelectedItem().toString();
@@ -114,7 +115,8 @@ public class ThreeDModelActivity extends AppCompatActivity {
         }
     }
 
-
+    //updates the picture frame based on what item is selected in the spinner dropdown menu
+    //gets the images from github
     public void updatePicture(Context context){
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         String text = mySpinner.getSelectedItem().toString();

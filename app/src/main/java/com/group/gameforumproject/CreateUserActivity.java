@@ -165,6 +165,11 @@ public class CreateUserActivity extends AppCompatActivity {
             return;
         }
 
+        if (pickedImgUri == null) {
+            Toast.makeText(CreateUserActivity.this, "You must add a profile image!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         mAuth.createUserWithEmailAndPassword(emailString, passwordString)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

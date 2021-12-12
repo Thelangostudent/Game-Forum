@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -57,6 +58,8 @@ public class FanArtActivity extends AppCompatActivity {
             }
         });
 
+
+        // create post button sends you to create fan art page
         create_post = findViewById(R.id.btn_createFanArtPost);
 
         create_post.setOnClickListener(view -> {
@@ -68,6 +71,8 @@ public class FanArtActivity extends AppCompatActivity {
 
     }
 
+
+    //when activity starts posts from database gets added to recyclerview
     @Override
     public void onStart() {
         super.onStart();
@@ -80,6 +85,7 @@ public class FanArtActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("Posts");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
+            //everytime database changes (for stuff involving fan art posts and not other children of root), code inside runs
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 fanArtPostList = new ArrayList<>();
@@ -100,7 +106,7 @@ public class FanArtActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Log.w("FanArtActivity", databaseError.toException());
             }
         });
 

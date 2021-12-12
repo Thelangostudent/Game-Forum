@@ -54,12 +54,23 @@ public class CreateUserActivity extends AppCompatActivity {
     Button userCreated;
 
 
-    //profile picture
+    //profile picture variables
+
+    //profile picture holder
     ImageView ImgUserPhoto;
+
+    //add image button
     ImageView addImage;
+
+    //used for launching other activities, gallery in this case
     ActivityResultLauncher<String> getContent;
+
     static int PReqCode = 1;
+
+    //the image source that user pics from gallery
     Uri pickedImgUri;
+
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -111,6 +122,7 @@ public class CreateUserActivity extends AppCompatActivity {
 
         });
 
+        //registering a call for an activity result
         getContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
                 new ActivityResultCallback<Uri>() {
                     @Override
@@ -128,7 +140,9 @@ public class CreateUserActivity extends AppCompatActivity {
 
 
 
-
+    //main user creation code, checks for valid input fields, then makes a call to the
+    //to the firebase database to add a new user with email and username that
+    // will be stored in database
     private void createAccount() {
 
         String emailString = this.email.getText().toString().trim();
@@ -263,11 +277,12 @@ public class CreateUserActivity extends AppCompatActivity {
 
 
 
-    //profile picture code
+    //opens the gallery app on the phone
     private void openGallery() {
         getContent.launch("image/*");
     }
 
+    // makes sure the app asks for permission to open an app on your phone
     private void checkAndRequestForPermission() {
 
 
@@ -291,26 +306,5 @@ public class CreateUserActivity extends AppCompatActivity {
             openGallery();
 
     }
-
-
-
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null ) {
-
-            // the user has successfully picked an image
-            // we need to save its reference to a Uri variable
-            pickedImgUri = data.getData() ;
-            ImgUserPhoto.setImageURI(pickedImgUri);
-
-
-        }
-
-
-    }*/
-
 
 }

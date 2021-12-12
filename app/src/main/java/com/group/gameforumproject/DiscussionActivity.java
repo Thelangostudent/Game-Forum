@@ -93,7 +93,7 @@ public class DiscussionActivity extends AppCompatActivity {
 
 
         remoteDataBase = FirebaseDatabase.getInstance("https://game-forum-backend-default-rtdb.europe-west1.firebasedatabase.app/");
-        referenceData = remoteDataBase.getReference("DiscussionPostBeta");
+        referenceData = remoteDataBase.getReference("DiscussionPostAlmostFinished");
         referenceData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

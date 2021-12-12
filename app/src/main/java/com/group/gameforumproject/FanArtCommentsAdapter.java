@@ -72,7 +72,7 @@ public class FanArtCommentsAdapter extends RecyclerView.Adapter<FanArtCommentsAd
 
         Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
         calendar.setTimeInMillis(time);
-        String date = DateFormat.format("hh:mm",calendar).toString();
+        String date = DateFormat.format("HH:mm",calendar).toString();
         return date;
 
 

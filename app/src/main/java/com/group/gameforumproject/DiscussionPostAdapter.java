@@ -44,7 +44,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     {
         holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
         holder.txt_OneDiscsussionTitle.setText(discussionList.get(position).getTitle());
-        holder.txt_OneDiscussionUserName.setText("Dummy");
+        holder.txt_OneDiscussionUserName.setText(discussionList.get(position).getUser().getUsername());
 
 
     }

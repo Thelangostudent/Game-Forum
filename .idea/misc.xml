@@ -3,40 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_create_discussion_post.xml" value="0.25833333333333336" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_create_fan_post.xml" value="0.25833333333333336" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_create_user.xml" value="0.4" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_discussion.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_discussion_detail_page.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_fan_art.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_fan_art_detail_page.xml" value="0.33177083333333335" />
         <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_login.xml" value="0.35280797101449274" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/activity_three_dmodel.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_comment.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_discussion.xml" value="0.33177083333333335" />
-        <entry key="..\:/SkuleTing/MobappProsjektFrontEndForum/app/src/main/res/layout/one_fanart.xml" value="0.25833333333333336" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_create_user.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_fan_art.xml" value="0.5546875" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_fan_art_detail_page.xml" value="0.3697916666666667" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_news.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/Bruker/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_three_dmodel.xml" value="0.1796875" />
-        <entry key="..\:/Users/mahmo/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_create_user.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/mahmo/OneDrive - NTNU/5. semester/mobile_applikasjoner/GameForum/app/src/main/res/layout/activity_news.xml" value="0.35733695652173914" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/drawable/active_spinner_item.xml" value="0.3828125" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/drawable/spinner_style.xml" value="0.3828125" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_create_fan_post.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_create_user.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_news.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/activity_three_dmodel.xml" value="0.33" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/simple_spinner_item.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/simple_spinner_item_edit.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/t0392/Desktop/Game-Forum/app/src/main/res/layout/spinner_theme.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/drawable/textbox_style.xml" value="0.36944444444444446" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_discussion.xml" value="0.5" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_fan_art.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_news.xml" value="0.33" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_three_dmodel.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/activity_three_dmodel_detail_page.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/one_fanart.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/t0392/Desktop/PHONEAPP/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

@@ -17,9 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.group.gameforumproject.FanArtCommentsAdapter;
-import com.group.gameforumproject.FanArtComments;
-import com.group.gameforumproject.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -63,7 +60,7 @@ public class FanArtDetailPage extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getSupportActionBar().hide();
 
-        // ini Views
+        // initiate variables
         RvComment = findViewById(R.id.rv_comment);
         imgPost =findViewById(R.id.post_detail_img);
         imgUserPost = findViewById(R.id.post_detail_user_img);
@@ -116,7 +113,7 @@ public class FanArtDetailPage extends AppCompatActivity {
         });
 
 
-        // now we need to bind all data into those views
+        // now we need to bind all data into those variables
         // first we need to get post data
         // we need to send post detail data to this activity first ...
         // now we can get post data
@@ -143,13 +140,13 @@ public class FanArtDetailPage extends AppCompatActivity {
         txtPostDateName.setText(date);
 
 
-        // ini Recyclerview Comment
-        iniRvComment();
+        // initiate Recyclerview Comment
+        initiateRvComment();
 
 
     }
 
-    private void iniRvComment() {
+    private void initiateRvComment() {
 
         RvComment.setLayoutManager(new LinearLayoutManager(this));
 
@@ -182,13 +179,14 @@ public class FanArtDetailPage extends AppCompatActivity {
 
     }
 
+    // refactored toast method
     private void showMessage(String message) {
 
         Toast.makeText(this,message,Toast.LENGTH_LONG).show();
 
     }
 
-
+    //changes date type into string
     private String timestampToString(long time) {
 
         Calendar calendar = Calendar.getInstance(Locale.ENGLISH);

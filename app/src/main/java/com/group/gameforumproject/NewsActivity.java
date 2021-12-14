@@ -34,9 +34,11 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        //Creates basic youtube player view
         youTubePlayerView = findViewById(R.id.activity_main_youtubePlayerView);
         getLifecycle().addObserver(youTubePlayerView);
 
+        //gets and plays the game tutorial from youtube in the yt app viewer
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {

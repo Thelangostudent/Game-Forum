@@ -15,6 +15,7 @@ public class DiscussionDetailPage extends AppCompatActivity {
 
     private TextView discussionDetailTitle;
     private TextView discussionDetailDescription;
+    private TextView discussionDetailUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

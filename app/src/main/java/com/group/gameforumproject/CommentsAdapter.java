@@ -12,29 +12,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class CommentsAdapter {
+public class CommentsAdapter  extends RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder> {
 
-    ArrayList<DiscussionPost> discussionList;
+    ArrayList<Comments> commentsList;
 
 
     Context context;
 
 
-    public CommentsAdapter(ArrayList<DiscussionPost> discussionList, Context context)
+    public CommentsAdapter(ArrayList<Comments> commentsList, Context context)
     {
-        this.discussionList = discussionList;
+        this.commentsList = commentsList;
         this.context = context;
     }
 
-    public DiscussionPostAdapter.DiscussionViewHolder onCreateViewHolder (ViewGroup parent, int viewType)
+    public CommentsViewHolder onCreateViewHolder (ViewGroup parent, int viewType)
     {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.one_comment,parent,false);
 
-        DiscussionPostAdapter.DiscussionViewHolder holder = new DiscussionPostAdapter.DiscussionViewHolder(view);
+        CommentsViewHolder holder = new CommentsViewHolder(view);
 
-        System.out.println(discussionList.size());
+        System.out.println(commentsList.size());
 
-        System.out.println(discussionList.get(0).getDescription());
+        System.out.println(commentsList.get(0).getDescription());
 
         return holder;
 
@@ -42,21 +42,18 @@ public class CommentsAdapter {
 
 
 
-
-
     @Override
-    public void onBindViewHolder(@NonNull DiscussionPostAdapter.DiscussionViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull CommentsViewHolder holder, int position)
     {
-        holder.txt_OneDiscsussionDescription.setText(discussionList.get(position).getDescription());
-        holder.txt_OneDiscsussionTitle.setText(discussionList.get(position).getTitle());
-        holder.txt_OneDiscussionUserName.setText(discussionList.get(position).getUser().getUsername());
+        holder.txt_commentDescription.setText(commentsList.get(position).getDescription());
+        holder.txt_commentUserName.setText(commentsList.get(position).getCommentByUser().getUsername());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return discussionList.size();
+        return commentsList.size();
     }
 
 
@@ -65,21 +62,19 @@ public class CommentsAdapter {
     }
 
 
-    public class DiscussionViewHolder extends RecyclerView.ViewHolder
+    public class CommentsViewHolder extends RecyclerView.ViewHolder
     {
-        ImageView img_userProfileOneDiscussion;
-        TextView txt_OneDiscussionUserName;
-        TextView txt_OneDiscsussionTitle;
-        TextView txt_OneDiscsussionDescription;
+        TextView txt_commentUserName;
+
+        TextView txt_commentDescription;
 
 
-        public DiscussionViewHolder(View itemView)
+        public CommentsViewHolder(View itemView)
         {
             super (itemView);
-            img_userProfileOneDiscussion = itemView.findViewById(R.id.img_userProfileOneDiscussion);
-            txt_OneDiscussionUserName = itemView.findViewById(R.id.txt_OneDiscussionUserName);
-            txt_OneDiscsussionTitle = itemView.findViewById(R.id.txt_OneDiscsussionTitle);
-            txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_OneDiscsussionDescription);
+
+            txt_commentUserName = itemView.findViewById(R.id.txt_commentUserName);
+            txt_commentDescription = itemView.findViewById(R.id.txt_commentDescription);
 
 
 

@@ -30,6 +30,8 @@ public class DiscussionActivity extends AppCompatActivity {
 
     public static ArrayList<DiscussionPost> DISCUSSIONLIST;
 
+    public static int CURRENTCLICKEDPOST;
+
     public ArrayList<DiscussionPost> discussionPostList = new ArrayList<>();
     public ArrayList<Comments> commentList = new ArrayList<>();
     public User user;
@@ -112,6 +114,7 @@ public class DiscussionActivity extends AppCompatActivity {
                 adapter.setOnClickListener(position -> {
                     Intent detailIntent = new Intent(DiscussionActivity.this, DiscussionDetailPage.class );
                     detailIntent.putExtra("id",discussionPostList.get(position).getId());
+                    CURRENTCLICKEDPOST = position;
                     startActivity(detailIntent);
                 });
 

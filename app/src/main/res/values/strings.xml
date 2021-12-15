@@ -4,6 +4,7 @@
     <string name="user_ID">User ID </string>
     <string name="prompt_password">Password </string>
     <string name="cancel_button">Cancel</string>
+    <string name="News_Description">Planet adventure released to a warm reception! We have worked hard to finally show it off. It is available on our <a href="https://thelango99.itch.io/planetadventure-project">itch.io</a> page, take a look. From all of us at PlanetAdvetureDevTeam. Below is a full playthrough of our final game.</string>
 
     <string-array name="models">
         <item>Select model</item>

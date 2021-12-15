@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAdapter.DiscussionViewHolder> {
 
     ArrayList<DiscussionPost> discussionList;
+    OnClickListener listener = position ->{};
 
     Context context;
 
@@ -39,6 +40,10 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
 
     }
 
+    public void setOnClickListener(OnClickListener listener) {this.listener = listener;}
+
+
+
     @Override
     public void onBindViewHolder(@NonNull DiscussionViewHolder holder, int position)
     {
@@ -52,6 +57,11 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
     @Override
     public int getItemCount() {
         return discussionList.size();
+    }
+
+
+    interface OnClickListener {
+        void onClick(int position);
     }
 
 
@@ -71,6 +81,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
             txt_OneDiscsussionTitle = itemView.findViewById(R.id.txt_OneDiscsussionTitle);
             txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_OneDiscsussionDescription);
 
+            itemView.setOnClickListener(v -> listener.onClick(getAdapterPosition()));
 
         }
     }

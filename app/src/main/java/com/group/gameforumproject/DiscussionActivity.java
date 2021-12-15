@@ -108,6 +108,13 @@ public class DiscussionActivity extends AppCompatActivity {
 
                 }
 
+                // ability to click on each element to get to the detail page.
+                adapter.setOnClickListener(position -> {
+                    Intent detailIntent = new Intent(DiscussionActivity.this, DiscussionDetailPage.class );
+                    detailIntent.putExtra("id",discussionPostList.get(position).getId());
+                    startActivity(detailIntent);
+                });
+
                 DISCUSSIONLIST = discussionPostList;
 
                 recyclerView.setAdapter(adapter);
@@ -120,6 +127,10 @@ public class DiscussionActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
 
     }

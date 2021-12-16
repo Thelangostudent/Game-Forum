@@ -2,8 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/img_userProfileOneDiscussion"
@@ -11,10 +12,10 @@
         android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.997"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.887"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -24,10 +25,10 @@
         android:text="UserName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <TextView
         android:id="@+id/txt_OneDiscsussionTitle"
@@ -45,26 +46,29 @@
         android:id="@+id/txt_OneDiscsussionDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginEnd="89dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
         android:text="DiscussionPostDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/divider4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="404dp"
+        android:layout_height="19dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="1dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/img_userProfileOneDiscussion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_userProfileOneDiscussion" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_OneDiscsussionDescription"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -128,7 +128,7 @@ public class DiscussionDetailPage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-
+                commentList = new ArrayList<>();
 
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
@@ -144,9 +144,7 @@ public class DiscussionDetailPage extends AppCompatActivity {
                 }
 
 
-
-
-
+                commentsAdapter = new CommentsAdapter(commentList, getApplicationContext());
                 commentRecycler.setAdapter(commentsAdapter);
 
 

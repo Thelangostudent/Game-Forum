@@ -133,8 +133,8 @@ public class DiscussionDetailPage extends AppCompatActivity {
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
                     Comments post = postsnap.getValue(Comments.class);
-                    COMMENTLIST.add(post);
-                    if (post.getCommentid() == id)
+                    //COMMENTLIST.add(post);
+                    if (post.getPostId() == id)
                     {
                         commentList.add(post);
                     }

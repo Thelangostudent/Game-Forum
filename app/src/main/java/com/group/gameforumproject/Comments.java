@@ -6,16 +6,21 @@ public class Comments {
     private int commentid;
     private User commentByUser;
     private String description;
-    private char postType;
 
-    public Comments (int commentId, int postId ,  User commentByUser, String description, char postType)
+
+
+
+    public Comments (int commentId, int postId ,  User commentByUser, String description)
     {
         this.commentid = commentId;
         this.commentByUser = commentByUser;
         this.description = description;
-        this.postType = postType;
+
         this.postId = postId;
     }
+
+    public Comments(){}
+
 
     public int getPostId() {
         return postId;
@@ -51,11 +56,5 @@ public class Comments {
         this.description = description;
     }
 
-    public char getPostType() {
-        return postType;
-    }
 
-    public void setPostType(char postType) {
-        this.postType = postType;
-    }
 }

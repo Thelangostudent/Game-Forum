@@ -4,7 +4,7 @@ import com.google.firebase.database.ServerValue;
 
 public class FanArtPost {
 
-    private int id;
+
     private String postKey;
     private String title;
     private String userId;
@@ -19,7 +19,6 @@ public class FanArtPost {
 
     public FanArtPost (String title, String description, String picture, String userId, String userPhoto, String username)
     {
-        this.id = id;
         this.title = title;
         this.userId = userId;
         this.picture = picture;
@@ -62,14 +61,6 @@ public class FanArtPost {
 
     public void setUserPhoto(String userPhoto) {
         this.userPhoto = userPhoto;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {

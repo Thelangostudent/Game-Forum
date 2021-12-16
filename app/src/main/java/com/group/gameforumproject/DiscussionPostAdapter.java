@@ -76,7 +76,7 @@ public class DiscussionPostAdapter extends RecyclerView.Adapter<DiscussionPostAd
         public DiscussionViewHolder(View itemView)
         {
             super (itemView);
-            img_userProfileOneDiscussion = itemView.findViewById(R.id.img_userProfileOneDiscussion);
+            //img_userProfileOneDiscussion = itemView.findViewById(R.id.img_userProfileOneDiscussion);
             txt_OneDiscussionUserName = itemView.findViewById(R.id.txt_OneDiscussionUserName);
             txt_OneDiscsussionTitle = itemView.findViewById(R.id.txt_OneDiscsussionTitle);
             txt_OneDiscsussionDescription = itemView.findViewById(R.id.txt_OneDiscsussionDescription);

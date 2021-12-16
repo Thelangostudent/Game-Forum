@@ -19,6 +19,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+// code inspired by https://github.com/aws1994/BlogApp
+
 public class FanArtCommentsAdapter extends RecyclerView.Adapter<FanArtCommentsAdapter.CommentViewHolder> {
 
     private Context mContext;

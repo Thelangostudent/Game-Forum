@@ -1,9 +1,9 @@
 package com.group.gameforumproject;
 import com.google.firebase.database.ServerValue;
+
+// code inspired by https://github.com/aws1994/BlogApp
+
 public class FanArtComments {
-
-
-
 
     private String content, uid, uimg, uname ;
     private Object timestamp;

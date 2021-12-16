@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+// code inspired by https://github.com/aws1994/BlogApp
+
 public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.MyViewHolder> {
 
    private Context mContext;

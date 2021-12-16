@@ -32,6 +32,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+// code inspired by https://github.com/aws1994/BlogApp
+
 public class FanArtDetailPage extends AppCompatActivity {
     ImageView imgPost,imgUserPost,imgCurrentUser;
     TextView txtPostDesc,txtPostDateName,txtPostTitle;

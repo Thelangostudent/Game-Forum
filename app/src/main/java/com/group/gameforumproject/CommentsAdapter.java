@@ -57,9 +57,7 @@ public class CommentsAdapter  extends RecyclerView.Adapter<CommentsAdapter.Comme
     }
 
 
-    interface OnClickListener {
-        void onClick(int position);
-    }
+
 
 
     public class CommentsViewHolder extends RecyclerView.ViewHolder

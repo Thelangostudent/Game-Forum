@@ -20,12 +20,12 @@ import java.util.List;
 public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.MyViewHolder> {
 
    private Context mContext;
-   private List<FanArtPost> mData ;
+   private List<FanArtPost> faPosts;
 
 
-    public FanArtPostAdapter(Context mContext, List<FanArtPost> mData) {
+    public FanArtPostAdapter(Context mContext, List<FanArtPost> faPosts) {
         this.mContext = mContext;
-        this.mData = mData;
+        this.faPosts = faPosts;
     }
 
     @NonNull
@@ -39,16 +39,16 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.tvTitle.setText(mData.get(position).getTitle());
-        holder.name.setText(mData.get(position).getUsername());
-        Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
-        Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
+        holder.tvTitle.setText(faPosts.get(position).getTitle());
+        holder.name.setText(faPosts.get(position).getUsername());
+        Glide.with(mContext).load(faPosts.get(position).getPicture()).into(holder.imgPost);
+        Glide.with(mContext).load(faPosts.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return faPosts.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -72,13 +72,13 @@ public class FanArtPostAdapter extends RecyclerView.Adapter<FanArtPostAdapter.My
                     Intent postDetailActivity = new Intent(mContext,FanArtDetailPage.class);
                     int position = getAdapterPosition();
 
-                    postDetailActivity.putExtra("title",mData.get(position).getTitle());
-                    postDetailActivity.putExtra("postImage",mData.get(position).getPicture());
-                    postDetailActivity.putExtra("description",mData.get(position).getDescription());
-                    postDetailActivity.putExtra("postKey",mData.get(position).getPostKey());
-                    postDetailActivity.putExtra("userPhoto",mData.get(position).getUserPhoto());
-                    postDetailActivity.putExtra("userName",mData.get(position).getUsername());
-                    long timestamp  = (long) mData.get(position).getTimestamp();
+                    postDetailActivity.putExtra("title", faPosts.get(position).getTitle());
+                    postDetailActivity.putExtra("postImage", faPosts.get(position).getPicture());
+                    postDetailActivity.putExtra("description", faPosts.get(position).getDescription());
+                    postDetailActivity.putExtra("postKey", faPosts.get(position).getPostKey());
+                    postDetailActivity.putExtra("userPhoto", faPosts.get(position).getUserPhoto());
+                    postDetailActivity.putExtra("userName", faPosts.get(position).getUsername());
+                    long timestamp  = (long) faPosts.get(position).getTimestamp();
                     postDetailActivity.putExtra("postDate",timestamp) ;
                     mContext.startActivity(postDetailActivity);
 
